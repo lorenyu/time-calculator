@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 from TimeCalculator import TimeCalculator
 
@@ -7,5 +8,7 @@ while True:
   line = sys.stdin.readline().strip()
   if line == 'quit':
     break
-  print(f'processing line {line}')
-  calculator.process(line)
+  try:
+    calculator.process(line)
+  except Exception as error:
+    print(f'Error: {error}', file=sys.stderr)

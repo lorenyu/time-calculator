@@ -41,7 +41,7 @@ class Time(Node):
     elif token_val == 'am':
       hours = num
       type = 'time'
-      return Time(timedelta(hours=hours))
+      return Time(timedelta(hours=hours)), tokens
     elif token_val == 'pm':
       hours = num + 12 if num < 12 else num
       type = 'time'
